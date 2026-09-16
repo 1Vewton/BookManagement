@@ -2,7 +2,7 @@ using System.Drawing;
 
 namespace BookManagementApplication.Utils
 {
-    public class Utils
+    public class ColorUrils
     {
         // GetColor gets color from string
         public static Color GetColor(
@@ -14,6 +14,7 @@ namespace BookManagementApplication.Utils
                 case "red":
                     return Color.Red;
                 case "blue":
+                    return Color.Blue;
                 default:
                     return Color.Black;
             }
