@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="BookManagementApplication.Tests/BookManagementApplication.Tests.csproj" />
+  <Project Path="BookManagementApplication/BookManagementApplication.csproj" />
 </Solution>

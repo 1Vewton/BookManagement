@@ -1,14 +1,25 @@
 using System.Drawing;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace BookManagementApplication.Form
 {
     // Color defines the color
     public class RawColor
     {
-        int r;
-        int g;
-        int b;
-        int alpha;
+        public int r;
+        public int g;
+        public int b;
+        public int alpha;
+
+        // Constructor for default
+        public RawColor()
+        {
+            this.r = 0;
+            this.g = 0;
+            this.b = 0;
+            this.alpha = 0;
+        }
         
         // Constructor creates a color from rgb scale of 0-255
         public RawColor(
@@ -45,6 +56,17 @@ namespace BookManagementApplication.Form
                 this.r,
                 this.g,
                 this.b
+            );
+        }
+
+        // Equals checks if two colors are equal
+        public bool Equals(RawColor another)
+        {
+            return (
+                this.alpha == another.alpha
+                && this.r == another.r
+                && this.g == another.g
+                && this.b == another.b
             );
         }
     }
