@@ -1,4 +1,4 @@
-using System.Security.Cryptography.X509Certificates;
+using Newtonsoft.Json;
 using Microsoft.VisualBasic;
 
 namespace BookManagementApplication.Form
@@ -72,6 +72,13 @@ namespace BookManagementApplication.Form
             }
             BookForm resultBook = BookForm.NewBookFormFromFile(resultFilePath);
             return resultBook;
+        }
+
+        // ToString converts the book manager to json string
+        public string Convert()
+        {
+            string jsonString = JsonConvert.SerializeObject(this);
+            return jsonString;
         }
     }
 }
