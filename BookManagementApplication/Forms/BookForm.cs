@@ -20,6 +20,12 @@ namespace BookManagementApplication.Form
             string description
         )
         {
+            if (title.Contains("."))
+            {
+                throw new Exception(
+                    "you do not need to add suffix in file name inputted"
+                );
+            }
             this.title = title;
             this.totalChapters = totalChapters;
             this.currentChapter = 0;

@@ -6,7 +6,8 @@ namespace BookManagementApplication.Tests
     public class UnitTestBookForm
     {
         [Fact]
-        public void ToJSON()
+        // ToJSON tests read and load of books
+        public void TestToJSON()
         {
             BookForm NewBook = new BookForm(
                 "test",
@@ -26,6 +27,24 @@ namespace BookManagementApplication.Tests
                     NewBook.ToString(),
                     reloadedBook.ToString()
                 )
+            );
+        }
+
+        [Fact]
+        public void TestManager()
+        {
+            BookForm NewBook = new BookForm(
+                "test",
+                10,
+                "N/A"
+            );
+            BookManager manager = new BookManager(
+                "books"
+            );
+            manager.RegisterBook(NewBook);
+            BookForm? Fetched = manager.GetBook("test");
+            Assert.NotNull(
+                Fetched
             );
         }
     }
